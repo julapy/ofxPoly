@@ -11,6 +11,7 @@
 void ofxLinesGrow(const ofPolyline & polyIn, ofPolyline & polyOut, float amount) {
     
     polyOut.clear();
+    polyOut.setClosed(polyIn.isClosed());
     
     const vector<ofVec3f> & points = polyIn.getVertices();
     
@@ -20,5 +21,18 @@ void ofxLinesGrow(const ofPolyline & polyIn, ofPolyline & polyOut, float amount)
         point += normal * amount;
         
         polyOut.addVertex(point);
+    }
+}
+
+
+void ofxLinesDrawNormals(const ofPolyline & poly, float normalLength) {
+
+    const vector<ofVec3f> & points = poly.getVertices();
+    
+    for(int i=0; i<points.size(); i++) {
+        const ofVec3f & point = points[i];
+        ofVec3f normal = poly.getNormalAtIndex(i);
+
+        ofDrawLine(point, point + (normal * normalLength));
     }
 }

@@ -9,3 +9,5 @@
 #include "ofMain.h"
 
 void ofxLinesGrow(const ofPolyline & polyIn, ofPolyline & polyOut, float amount);
+
+void ofxLinesDrawNormals(const ofPolyline & poly, float normalLength);
