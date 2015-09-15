@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxLines.h"
+#include "ofxPoly.h"
 
 class ofApp : public ofBaseApp{
 

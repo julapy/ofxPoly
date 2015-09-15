@@ -13,8 +13,8 @@ void ofApp::update(){
 
     poly.setClosed(bPolyClosed);
     
-    ofxLinesGrow(poly, polyOuter, polyThickness);
-    ofxLinesGrow(poly, polyInner, -polyThickness);
+    ofxPolyGrow(poly, polyOuter, polyThickness);
+    ofxPolyGrow(poly, polyInner, -polyThickness);
 }
 
 //--------------------------------------------------------------
@@ -28,10 +28,12 @@ void ofApp::draw(){
         ofDrawCircle(point.x, point.y, 4);
     }
     
-    ofxLinesDrawNormals(poly, polyThickness);
+    ofxPolyDrawNormals(poly, polyThickness);
     
     ofSetColor(ofColor::magenta);
     polyOuter.draw();
+    
+    ofSetColor(ofColor::cyan);
     polyInner.draw();
     
     ofSetColor(ofColor::white);
