@@ -44,6 +44,9 @@ void ofApp::keyPressed(int key){
     if(key == 'c' || key == 'C') {
         bPolyClosed ^= true;
     }
+    if(key == 'r' || key == 'R') {
+        poly.clear();
+    }
 }
 
 //--------------------------------------------------------------
