@@ -13,8 +13,8 @@ void ofApp::update(){
 
     poly.setClosed(bPolyClosed);
     
-    ofxPolyGrow(poly, polyOuter, polyThickness);
-    ofxPolyGrow(poly, polyInner, -polyThickness);
+    ofxPolyGrow(polyOuter, poly, polyThickness);
+    ofxPolyGrow(polyInner, poly, -polyThickness);
 }
 
 //--------------------------------------------------------------
